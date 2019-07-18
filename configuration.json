@@ -1,6 +1,6 @@
 {
     "faceAPI": {
-        "key": "[SUBSCRIPTION-KEY]",
+        "key": "{REPLACE}",
         "endpoint": "https://canadacentral.api.cognitive.microsoft.com/face/v1.0/",
         "params": {
             "detect": {
@@ -11,7 +11,13 @@
                 "detectionModel": "detection_01",
                 "returnFaceAttributes": "age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise"
             },
-            "findsimilar": {}
+            "findsimilars": {
+                "faceId": "257a41fc-8f61-4ea7-a0e5-54b5a905deb2",
+                "faceIds": [
+                    "bdb5cc24-f439-4997-850b-1a5524039ee4",
+                    "b87c5a01-b061-4b41-a823-fc6da1192e1e"
+                ]
+            }
         },
         "sampleURL": "https://pmcvariety.files.wordpress.com/2013/10/ana-serradilla.jpg?w=1000&h=563&crop=1"
     }

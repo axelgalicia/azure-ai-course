@@ -26,8 +26,6 @@ class FaceAPI {
             body: data
         };
 
-       // console.log(options);
-
         const response = await fetch(url, options).catch(e => {
             console.log('There was an error when calling FaceAPI', e);
         });
@@ -36,12 +34,10 @@ class FaceAPI {
     }
 
 
-    async findSimilar() {
+    async findSimilars() {
 
-        const url = new URL('findsimilar', conf.endpoint);
-        const params = conf.params.findsimilar;
-        url.search = new URLSearchParams(params);
-
+        const url = new URL('findsimilars', conf.endpoint);
+    
         const data = JSON.stringify({
             "url": conf.sampleURL
           });
@@ -52,10 +48,9 @@ class FaceAPI {
                 'Content-Type': 'application/json',
                 'Ocp-Apim-Subscription-Key': conf.key
             },
-            body: data
+            body: JSON.stringify(conf.params.findsimilars)
         };
 
-       // console.log(options);
 
         const response = await fetch(url, options).catch(e => {
             console.log('There was an error when calling FaceAPI', e);
